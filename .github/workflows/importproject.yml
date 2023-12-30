@@ -15,15 +15,7 @@ on:
         required: true
   
   repository_dispatch:
-    types:
-      - webhook
-    inputs:
-      project:
-        description: "The project to download and publish"
-        required: true
-      distributionName:
-        description: "The name of the distribution directory"
-        required: true
+    types: [upload_dist]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,16 +33,16 @@ jobs:
         id: download-artifact
         uses: dawidd6/action-download-artifact@v3
         with:
-          repo: cph101/${{ github.event.inputs.project }}
+          repo: cph101/${{ github.event.inputs.project || github.event.client_payload.project }}
           name: maven-repo
           workflow: publish.yml
-          path: ./releases/${{ github.event.inputs.distributionName }}
+          path: ./releases/${{ github.event.inputs.distributionName || github.event.client_payload.distributionName }}
 
       # Runs a set of commands using the runners shell
       - name: Rename maven repo
         run: |
           cd ./releases/
-          mv ${{ github.event.inputs.distributionName }}/maven-metadata-local.xml ${{ github.event.inputs.distributionName }}/maven-metadata.xml
+          mv ${{ github.event.inputs.distributionName || github.event.client_payload.distributionName }}/maven-metadata-local.xml ${{ github.event.inputs.distributionName || github.event.client_payload.distributionName }}/maven-metadata.xml
 
       - name: Commit Built Repo
         run: |
@@ -58,5 +50,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           git add --all
-          git commit -m "Uploaded new version of ${{ github.event.inputs.distributionName }}"
+          git commit -m "Uploaded new version of ${{ github.event.inputs.distributionName || github.event.client_payload.distributionName }}"
           git push origin main
