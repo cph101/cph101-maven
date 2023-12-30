@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: null
 ---
 
 ## Hi there, and welcome to my maven repo!
