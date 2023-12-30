@@ -44,7 +44,7 @@ jobs:
           repo: cph101/${{ github.event.inputs.project }}
           name: maven-repo
           workflow: publish.yml
-          path: ./releases/
+          path: ./releases/${{ github.event.inputs.distributionName }}
 
       # Runs a set of commands using the runners shell
       - name: Rename maven repo
