@@ -1,17 +1,2 @@
 name: "cph101's maven repo"
 title: false
-
-remote_theme: abhinavs/moonwalk
-
-theme_config:
-  appearance: "dark"
-  show_description: false 
-  show_navbar: false
-  show_footer: false
-  show_copyright: false
-  show_projects: false
-  show_blog: false
-  show_old_projects: false
-  show_misc_list: false
-  show_reading_time: false
-  show_tags: false
