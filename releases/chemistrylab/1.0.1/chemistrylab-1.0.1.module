@@ -1,0 +1,85 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "cph",
+    "module": "chemistrylab",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "chemistrylab-1.0.1.jar",
+          "url": "chemistrylab-1.0.1.jar",
+          "size": 6680,
+          "sha512": "da0fe09345c127e78432597667842798cf444bb6f628c3a084eb97128aed6058c62f11adf659c6556aaa2301f89fc02ee641ab926148c6cd84d96052ce58ff9f",
+          "sha256": "82d7cb2bc8a69255431ec0848f118b0a95877353e9e8602265e46e0766a4f597",
+          "sha1": "0a98802f4da257de242e6951b24e082dac053c98",
+          "md5": "8baf2a13cc6bb51013bade3f966442a5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.15.3"
+          }
+        },
+        {
+          "group": "net.fabricmc.fabric-api",
+          "module": "fabric-api",
+          "version": {
+            "requires": "0.77.0+1.19.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "chemistrylab-1.0.1.jar",
+          "url": "chemistrylab-1.0.1.jar",
+          "size": 6680,
+          "sha512": "da0fe09345c127e78432597667842798cf444bb6f628c3a084eb97128aed6058c62f11adf659c6556aaa2301f89fc02ee641ab926148c6cd84d96052ce58ff9f",
+          "sha256": "82d7cb2bc8a69255431ec0848f118b0a95877353e9e8602265e46e0766a4f597",
+          "sha1": "0a98802f4da257de242e6951b24e082dac053c98",
+          "md5": "8baf2a13cc6bb51013bade3f966442a5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      }
+    }
+  ]
+}
