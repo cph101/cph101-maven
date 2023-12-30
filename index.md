@@ -18,6 +18,15 @@ repositories {
 }
 
 dependencies {
-	modImplementation include("chemistrylib:1.0.2") // Remember! This is for Minecraft 1.19.2
+	modImplementation include("cph:chemistrylib:1.0.2") // Remember! This is for Minecraft 1.19.2
+}
+```
+And you probably want this in your fabric.mod.json:
+```json5
+{
+	"depends": {
+		"chemistrylab": ">=1.0.2" // allow versions 1.0.2 and up
+	},
+	// etc.. note that comments like these won't work in standard json
 }
 ```
